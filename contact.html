@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 	<head>
-		<title>Dennis Chi - About</title>
+		<title>Dennis Chi - Contact</title>
 		<link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
 		<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 	</head>
@@ -21,25 +21,32 @@
 		</header>
 
 		<div class="mainContent">
-			<h1>About Me</h1>
+			<h1>Contact</h1>
 			<br>
 			<hr>
 			<br>
-			<p>
-				<img src="./assets/images/photo-200-320.jpg" alt="Photo of Me">
-				An IT Manager and Computer Information Sciences Instructor at Knowledge Systems Institute.
+			<form action="/action_page.php">
+				<p>
+					Name
+					<br>
+					<input type="text" placeholder="John Smith" id="txtName">
+				</p>
 				<br>
+				<p>
+					Email
+					<br>
+					<input type="text" placeholder="example@gmail.com" id="txtEmail">
+				</p>
 				<br>
-				Daily Function includes the following:
-				<br>
-				- Programming
-				<br>
-				- System Building/Administration
-				<br>
-				- Database Building/Administration
-				<br>
-				- Networking Building/Adminstration
-			</p>
+				<p>
+					Message
+					<br>
+					<textarea id="txtMessage" rows="10"></textarea>
+				</p>
+				<p>
+					<input type="submit" value="Submit">
+				</p>
+			</form>
 		</div>
 		<div class="sideBar">
 			<h2>Connect with Me</h2>
