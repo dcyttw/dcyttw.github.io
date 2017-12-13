@@ -45,6 +45,7 @@ p {
 }
 
 #gameInfo {
+	margin-bottom: 100px;
 }
 
 #currentWord {
