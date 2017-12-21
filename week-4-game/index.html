@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="UTF-8">
+		<title>Crystal Collector</title>
+		<link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+		<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+		<script src="./assets/javascript/game.js"></script>
+	</head>
+	<body>
+		<header>
+			<p>Crystal Collector</p>
+		</header>
+		<h3>
+			You will be given a random number at the start of the game.<br>
+			There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.<br>
+			You win the game by matching your total score to the random number, you lose the game if your total score goes above the random number.<br>
+			The value of each crystal is hidden until clicked.<br>
+			Each new game, the crystals will have a new value.<br>
+			Good Luck!
+		</h3>
+		<hr>
+
+		<img src="./assets/images/crystal1.png" class="crystal" id="red">
+		<img src="./assets/images/crystal2.png" class="crystal" id="white">
+		<img src="./assets/images/crystal3.png" class="crystal" id="green">
+		<img src="./assets/images/crystal4.png" class="crystal" id="blue">	
+
+		<div id="randomNumber"></div>
+		<div id="gameStatus">
+			<div id="gameMessage"></div>
+			<div id="wins"></div>
+			<div id="losses"></div>
+		</div>
+		<div id="game" style="margin-bottom: 200px;">
+			<h2>Your total score:</h2>
+			<div id="sum"></div>
+		</div>
+		<footer>
+			<p>&copy; Copyright 2017 Dennis Chi<p>
+		</footer>
+	</body>
+</html>
