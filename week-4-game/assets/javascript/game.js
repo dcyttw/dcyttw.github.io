@@ -3,10 +3,10 @@ var losses = 0;
 var sum = 0;
 var randomNumber = 0;
 
-var red = Math.floor((Math.random() * 12) + 1);
-var white = Math.floor((Math.random() * 12) + 1);
-var green = Math.floor((Math.random() * 12) + 1);
-var blue = Math.floor((Math.random() * 12) + 1);
+var red = 0;
+var white = 0;
+var green = 0;
+var blue = 0;
 
 $(document).ready(function() {
 	startGame();
@@ -50,6 +50,10 @@ $(document).ready(function() {
 	function startGame() {
 		randomNumber = Math.floor((Math.random() * 100) + 19);
 		sum = 0;
+		red = Math.floor((Math.random() * 12) + 1);
+		white = Math.floor((Math.random() * 12) + 1);
+		green = Math.floor((Math.random() * 12) + 1);
+		blue = Math.floor((Math.random() * 12) + 1);
 		$("#randomNumber").empty();
 		$("#randomNumber").append(randomNumber);
 		$("#wins").empty();
