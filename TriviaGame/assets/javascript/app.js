@@ -45,7 +45,6 @@ $(document).ready(function() {
 	var count = 0;
 	var time = 0;
 	var intervalId;
-	var state = "";
 	var rightAnswer = 0;
 	var wrongAnswer = 0;
 	var unAnswer = 0;
@@ -71,7 +70,7 @@ $(document).ready(function() {
 	});
 
 	function createQuiz(q) {
-		var p = $("<p>");
+		var p = $("<h1>");
 		p.attr("id", "qb");
 		p.append(questions[count].question);
 		p.append("<br>");
@@ -93,10 +92,13 @@ $(document).ready(function() {
 			start();
 			count++;
 		} else {
+			var str = "<h2>Correct: " + rightAnswer + "</h2>";
+			str += "<h2>Wrong: " + wrongAnswer + "</h2>";
+			str += "<h2>Unanswer: " + unAnswer + "</h2>";
 			count = 0;
-			var str = "Correct: " + rightAnswer + "<br>";
-			str += "Wrong: " + wrongAnswer + "<br>";
-			str += "Unanswer: " + unAnswer;
+			rightAnswer = 0;
+			wrongAnswer = 0;
+			unAnswer = 0;
 			$("#display").html(str);
 			$(".button").text("Restart");
 			$(".button").show();
@@ -104,35 +106,45 @@ $(document).ready(function() {
 	}
 
 	$(document.body).on("click", ".choice", function() {
+		$("#display").empty();
 		if ($(this).attr("value") === questions[count -1].correctAnswer) {
+			$("#display").html("<h2>Correct!</h2>");
+			var img = $("<img>");
+			img.attr("src", "./assets/images/" + questions[count -1].correctAnswer + "_cursiva.gif");
+			$("#display").append(img);
 			rightAnswer++;
 			pause();
 		} else {
+			$("#display").html("<h2>Nope!<br>Correct Answer was " + questions[count -1].correctAnswer + "</h2>");
+			var img = $("<img>");
+			img.attr("src", "./assets/images/" + questions[count -1].correctAnswer + "_cursiva.gif");
+			$("#display").append(img);
 			wrongAnswer++;
 			pause();
 		}
 	});
 
 	function start() {
-		time = 3;
+		time = 10;
 		intervalID = setInterval(timer, 1000);
 	}
 
 	function pause() {
 		clearInterval(intervalID);
-		if (time === 0) {
-			unAnswer++;
-		}
 		setTimeout(function() { loadQuestion(); }, 3000);
 	}
 
 	function timer() {
 		if (time === 0) {
-			$("#display").html("<h2>Time's up!</h2>")
+			$("#display").html("<h2>Time's up!<br>Correct Answer was " + questions[count -1].correctAnswer + "</h2>")
+			var img = $("<img>");
+			img.attr("src", "./assets/images/" + questions[count -1].correctAnswer + "_cursiva.gif");
+			$("#display").append(img);
+			unAnswer++;
 			pause();
 		}
 		console.log(time);
-		$("#countdown").text("Time Remaining: " + time);
+		$("#countdown").html("<h1>Time Remaining: " + time + "</h1>");
 		time--;
 	}
 });
