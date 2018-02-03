@@ -58,7 +58,7 @@ $("#run-search").on("click", function(event) {
 });
 
 var searchTerm = "";
-var queryURLBase = "http://207.229.138.9:3000/tweets/";
+var queryURLBase = "https://dc.ksi.edu/tweets/";
 
 function runQuery(queryURL) {
   // The AJAX function uses the queryURL and GETS the JSON data associated with it.
